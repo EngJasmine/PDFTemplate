@@ -13,9 +13,7 @@ for index,item in df.iterrows():
     # ln=1 --> ln is actually a break of line --> Go to next line
     pdf.cell(w=0, h=12, txt=item[1], align='L')
     pdf.line(10,21,200,21)
-
-
-
-
-
+    for i in range(item['Pages']-1):
+    #for i in range(item[2]-1):
+        pdf.add_page()
 pdf.output('output.pdf')
